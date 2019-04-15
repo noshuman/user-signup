@@ -1,12 +1,23 @@
-<!DOCTYPE>
-<html>
-    <head></head>
-    <body>
-        <h1>User Sign Up, Please Fill Out The Information Reqeusted:</h1>
-        <form>
-            <table>
-                <tr></tr>
-            </table>
-        </form>
-    </body>
-</html>
+{% extends "base.html" %}
+    {% block content %}
+            <form action="/", method="post"></form>
+            <h2>Sign Up</h2>
+                <label for="username">User Name</label>
+                <input type="text" name="username" id="username">
+                <span class= "error" style="color: red;">{{user_error}}</span>
+                <br>
+                <label for="password">User Password</label>
+                <input type="password" name="password" id="password">
+                <span class= "error" style="color: red;">{{password_error}}</span>
+                <br>
+                <label for="verifypassword">Verify Password</label>
+                <input type="password" name="verifypassword" id="verifypassword">
+                <span class= "error" style="color: red;">{{verifypassword_error}}</span>
+                <br>
+                <label for="email">Email (Optional)</label>
+                <input type="text" name="email" id="email">
+                <span class= "error" style="color: red;">{{email_error}}</span>
+                <br>
+                <input type="submit" value="submit">
+            </form>
+    {% endblock %}
